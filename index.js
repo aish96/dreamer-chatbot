@@ -66,41 +66,41 @@ function sendMessage(recipientId, message) {
 };
 
 function moodAnalyser(sender){
-	messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [{
-                    "title": "dreamer",
-                    "subtitle": "How are you ?",
-                    // "image_url": myURL + "/appboy_logo.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.google.com",
-                        "title": "Happy"
-                    },
-                    {
-                    	"type": "web_url",
-                        "url": "https://www.google.com",
-                        "title": "Sad"
-                    },
-                    {
-                    	"type": "web_url",
-                        "url": "https://www.google.com",
-                        "title": "Angry"
-                    },
-                    {
-                    	"type": "postback",
-                        "url": "https://www.google.com",
-                        "title": "Excited"
-                        "payload":"DEVELOPER_DEFINED_PAYLOAD"
-                    }]
-                }]
-            }
-        }
-    }
+	// messageData = {
+ //        "attachment": {
+ //            "type": "template",
+ //            "payload": {
+ //                "template_type": "generic",
+ //                "elements": [{
+ //                    "title": "dreamer",
+ //                    "subtitle": "How are you ?",
+ //                    // "image_url": myURL + "/appboy_logo.png",
+ //                    "buttons": [{
+ //                        "type": "web_url",
+ //                        "url": "https://www.google.com",
+ //                        "title": "Happy"
+ //                    },
+ //                    {
+ //                    	"type": "web_url",
+ //                        "url": "https://www.google.com",
+ //                        "title": "Sad"
+ //                    },
+ //                    {
+ //                    	"type": "web_url",
+ //                        "url": "https://www.google.com",
+ //                        "title": "Angry"
+ //                    },
+ //                    {
+ //                    	"type": "postback",
+ //                        "url": "https://www.google.com",
+ //                        "title": "Excited"
+ //                        "payload":"DEVELOPER_DEFINED_PAYLOAD"
+ //                    }]
+ //                }]
+ //            }
+ //        }
+ //    }
 
-    // send the message
-    sendMessage(sender, messageData);
+ //    // send the message
+ //    sendMessage(sender, messageData);
 }
