@@ -78,7 +78,22 @@ function moodAnalyser(sender){
                     "buttons": [{
                         "type": "web_url",
                         "url": "https://www.google.com",
-                        "title": "Learn more"
+                        "title": "Happy"
+                    },
+                    {
+                    	"type": "web_url",
+                        "url": "https://www.google.com",
+                        "title": "Sad"
+                    },
+                    {
+                    	"type": "web_url",
+                        "url": "https://www.google.com",
+                        "title": "Angry"
+                    },
+                    {
+                    	"type": "web_url",
+                        "url": "https://www.google.com",
+                        "title": "Excited"
                     }]
                 }]
             }
