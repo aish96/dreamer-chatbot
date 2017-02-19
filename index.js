@@ -86,7 +86,7 @@ function moodAnalyser(sender){
                         "title": "Sad"
                     },
                     {
-                    	"type": "postback",
+                    	"type": "web_url",
                         "url": "https://www.google.com",
                         "title": "Angry"
                     },
@@ -94,6 +94,7 @@ function moodAnalyser(sender){
                     	"type": "postback",
                         "url": "https://www.google.com",
                         "title": "Excited"
+                        "payload":"DEVELOPER_DEFINED_PAYLOAD"
                     }]
                 }]
             }
