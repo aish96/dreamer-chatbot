@@ -72,25 +72,21 @@ function moodAnalyser(sender){
 			      {
 			        "content_type":"text",
 			        "title":"Happy",
-			        "image_url":"http://images.clipartpanda.com/smiley-face-transparent-background-smile-triste-421a98.gif"
 			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
 			      },
 			      {
 			        "content_type":"text",
 			        "title":"Sad",
-			        "image_url":"https://img.clipartfest.com/1facaa4efcdeb93a2fb18bd4bcd0de0a_smiley20face20transparent-clipart-sad-face-transparent-background_512-512.png"
 			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
 			      },
 			      {
 			        "content_type":"text",
 			        "title":"Energetic",
-			        "image_url":"https://s-media-cache-ak0.pinimg.com/736x/01/35/2b/01352b00e1914879039530fb36f1373a.jpg"
 			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
 			      },
 			      {
 			        "content_type":"text",
 			        "title":"Romantic",
-			        "image_url":"http://pix.iemoji.com/images/emoji/apple/ios-9/256/smiling-face-with-heart-shaped-eyes.png"			        
 			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
 			      }
 			    ]
