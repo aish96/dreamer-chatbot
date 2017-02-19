@@ -67,20 +67,20 @@ function sendMessage(recipientId, message) {
 
 function moodAnalyser(sender){
 	messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "button",
-                "text":"How you doin' ?"
-                "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.google.com",
-                        "title": "Learn more"
-                    }]
-               
-            }
-        }
-    }
+       "text":"Pick a color:",
+	    	"quick_replies":[
+			      {
+			        "content_type":"text",
+			        "title":"Red",
+			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+			      },
+			      {
+			        "content_type":"text",
+			        "title":"Green",
+			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+			      }
+			    ]
+		}
 
     // send the message
     sendMessage(sender, messageData);
