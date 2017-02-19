@@ -86,12 +86,12 @@ function moodAnalyser(sender){
                         "title": "Sad"
                     },
                     {
-                    	"type": "web_url",
+                    	"type": "postback",
                         "url": "https://www.google.com",
                         "title": "Angry"
                     },
                     {
-                    	"type": "web_url",
+                    	"type": "postback",
                         "url": "https://www.google.com",
                         "title": "Excited"
                     }]
