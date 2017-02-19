@@ -26,9 +26,23 @@ app.post('/webhook', function (req, res) {
     var events = req.body.entry[0].messaging;
     for (i = 0; i < events.length; i++) {
         var event = events[i];
+
         if (event.message && event.message.text) {
-            sendMessage(event.sender.id, {text: "Echo: " + event.message.text});
-        }
+        	var text = event.message.text;
+        	var upperCasedText = text.toUpperCase();
+        	var sender = event.sender.id;
+
+				if (upperCasedText.includes('MOOD')) {
+				    moodAnalyser(sender);
+				  // ignore rest of the event handling
+				  continue;
+				} else 
+				            sendMessage(sender, {text: "Echo: " + text});
+				  // ignore rest of the event handling
+				  continue;
+
+         }
+
     }
     res.sendStatus(200);
 });
@@ -50,3 +64,27 @@ function sendMessage(recipientId, message) {
         }
     });
 };
+
+function moodAnalyser(sender){
+	messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "dreamer",
+                    "subtitle": "How are you ?",
+                    // "image_url": myURL + "/appboy_logo.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.google.com",
+                        "title": "Learn more"
+                    }]
+                }]
+            }
+        }
+    }
+
+    // send the message
+    sendMessage(sender, messageData);
+}
