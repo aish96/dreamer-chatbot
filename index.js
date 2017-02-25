@@ -105,13 +105,13 @@ function moodAnalyser(sender){
 function getQuote(sender)
 {
 		request({
-		    url: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json",
+		    url: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=text",
 		    json: true
 		}, function (error, response, body) {
 
 		    if (!error && response.statusCode === 200) {
 		        console.log(body) // Print the json response
-		        msg= {"text":"quote goes here"};
+		        msg= {"text":body};
 		        sendMessage(sender,msg);
 		    }
 		})
