@@ -36,8 +36,11 @@ app.post('/webhook', function (req, res) {
 				    moodAnalyser(sender);
 				  // ignore rest of the event handling
 				  continue;
-				} else 
-				            sendMessage(sender, {text: "Echo: " + event.message.seq});
+				} else if (event.message.quick_reply) {
+					sendMessage(sender,{text: "quick reply"+text});
+
+				}  else 
+				            sendMessage(sender, {text: "Echo: " + text});
 
 				  // ignore rest of the event handling
 				  continue;
