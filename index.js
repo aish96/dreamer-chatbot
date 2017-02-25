@@ -37,7 +37,7 @@ app.post('/webhook', function (req, res) {
 				  // ignore rest of the event handling
 				  continue;
 				} else if (event.message.quick_reply) {
-					sendMessage(sender,{text: "quick reply"+text});
+					getQuote(sender);
 
 				}  else 
 				            sendMessage(sender, {text: "Echo: " + text});
@@ -100,4 +100,19 @@ function moodAnalyser(sender){
     sendMessage(sender, messageData);
 
 
+}
+
+function getQuote(sender)
+{
+		request({
+		    url: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json",
+		    json: true
+		}, function (error, response, body) {
+
+		    if (!error && response.statusCode === 200) {
+		        // console.log(body) // Print the json response
+		        msg= {"text":body.quoteText};
+		        sendMessage(sender,msg);
+		    }
+		})
 }
