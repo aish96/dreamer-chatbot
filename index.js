@@ -111,7 +111,7 @@ function getQuote(sender)
 
 		    if (!error && response.statusCode === 200) {
 		        // console.log(body) // Print the json response
-		        msg= {"text":body.quoteText};
+		        msg= {"text":body};
 		        sendMessage(sender,msg);
 		    }
 		})
