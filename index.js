@@ -110,8 +110,8 @@ function getQuote(sender)
 		}, function (error, response, body) {
 
 		    if (!error && response.statusCode === 200) {
-		        // console.log(body) // Print the json response
-		        msg= {"text":body};
+		        console.log(body) // Print the json response
+		        msg= {"text":"quote goes here"};
 		        sendMessage(sender,msg);
 		    }
 		})
