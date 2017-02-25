@@ -37,7 +37,8 @@ app.post('/webhook', function (req, res) {
 				  // ignore rest of the event handling
 				  continue;
 				} else 
-				            sendMessage(sender, {text: "Echo: " + text});
+				            sendMessage(sender, {text: "Echo: " + event.message.quick_reply.payload});
+
 				  // ignore rest of the event handling
 				  continue;
 
@@ -95,7 +96,5 @@ function moodAnalyser(sender){
     // send the message
     sendMessage(sender, messageData);
 
-    messageData = { "text":"nice to see you!"}
-    sendMessage(sender, messageData);
-    
+
 }
