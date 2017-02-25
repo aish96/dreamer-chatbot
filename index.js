@@ -37,6 +37,19 @@ app.post('/webhook', function (req, res) {
 				  // ignore rest of the event handling
 				  continue;
 				} else if (event.message.quick_reply) {
+					var payload = event.message.quick_reply.payload;
+					var msg;
+					if ( payload.includes('happy'))
+						msg="Its great to see you happy. Here's a quote to add some sugar to your pie :";
+					else if(payload.includes('sad'))
+						msg="Hang in there ,buddy . Here's a quote to bring a smile on your lovely face:";
+					else if(payload.includes('energetic'))
+						msg="Its nice to see you so pumped up . Here's a quote because why not ? :";
+					else
+						msg="Ahaan, romantic! Here's a quote to spice up the things a little: ";
+
+					// messageData={"text":msg	};
+					sendMessage(sender,{text:msg});
 					getQuote(sender);
 
 				}  else 
@@ -76,22 +89,22 @@ function moodAnalyser(sender){
 			      {
 			        "content_type":"text",
 			        "title":"Happy",
-			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+			        "payload":"happy"
 			      },
 			      {
 			        "content_type":"text",
 			        "title":"Sad",
-			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+			        "payload":"sad"
 			      },
 			      {
 			        "content_type":"text",
 			        "title":"Energetic",
-			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+			        "payload":"energetic"
 			      },
 			      {
 			        "content_type":"text",
 			        "title":"Romantic",
-			        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+			        "payload":"romantic"
 			      }
 			    ]
 		}
@@ -103,7 +116,8 @@ function moodAnalyser(sender){
 }
 
 function getQuote(sender)
-{
+{		
+
 		request({
 		    url: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=text",
 		    json: true
