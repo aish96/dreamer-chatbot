@@ -91,7 +91,7 @@ function moodAnalyser(sender){
 			      }
 			    ]
 		}
-		console.log(messageData);
+		//console.log(messageData);
     // send the message
-    sendMessage(sender, messageData);
+    // sendMessage(sender, messageData);
 }
