@@ -37,7 +37,7 @@ app.post('/webhook', function (req, res) {
 				  // ignore rest of the event handling
 				  continue;
 				} else 
-				            sendMessage(sender, {text: "Echo: " + event.message.quick_reply.payload});
+				            sendMessage(sender, {text: "Echo: " + event.message.seq});
 
 				  // ignore rest of the event handling
 				  continue;
