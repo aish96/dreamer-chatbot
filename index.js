@@ -184,7 +184,7 @@ function google_search(sender)
 		            "subtitle":"We\'ve got the right book for everyone.",
 		            "default_action": {
 		              "type": "web_url",
-		              "url": "www.google.com",
+		              "url": "https://www.google.com",
 		              "messenger_extensions": true,
 		              "webview_height_ratio": "tall",
 		              "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
