@@ -180,7 +180,7 @@ function google_search(sender)
 		        "elements":[
 		           {
 		            "title":"books!",
-		            "image_url":"http://gregdenning.com/wp-content/uploads/2014/10/Stack-of-books-great-education.jpg",
+		            "image_url":"https://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_527568/Image/Staff%20Images/Language%20Arts/sezozzar/il_fullxfull.273665395.jpg",
 		            "subtitle":"We\'ve got the right book for everyone.",
 		            "default_action": {
 		              "type": "web_url",
