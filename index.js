@@ -168,7 +168,7 @@ function google_search(sender)
 
 		    if (!error && response.statusCode === 200) {
 		        console.log(body) // Print the json response
-		        msg= {"text":body};
+		        msg= {"text":body.kind};
 		        sendMessage(sender,msg);
 		    }
 		})
