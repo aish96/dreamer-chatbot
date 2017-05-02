@@ -171,7 +171,40 @@ function google_search(sender)
 		        var item = body.items[i].link;
 		        t=t+item+'\n';
 		      }
-		        msg= {"text":t};
+
+		    msg ={
+		     "attachment":{
+		      "type":"template",
+		      "payload":{
+		        "template_type":"generic",
+		        "elements":[
+		           {
+		            "title":t,
+		            "image_url":"http://gregdenning.com/wp-content/uploads/2014/10/Stack-of-books-great-education.jpg",
+		            "subtitle":"We\'ve got the right book for everyone.",
+		            "default_action": {
+		              "type": "web_url",
+		              "url": "www.google.com",
+		              "messenger_extensions": true,
+		              "webview_height_ratio": "tall",
+		              "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+		            },
+		            "buttons":[
+		              {
+		                "type":"web_url",
+		                "url":"https://petersfancybrownhats.com",
+		                "title":"View Website"
+		              },{
+		                "type":"postback",
+		                "title":"Start Chatting",
+		                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+		              }              
+		            ]      
+		          }
+		        ]
+		      }
+   			 }
+   			};
 		        sendMessage(sender,msg);
 		    }
 		})
