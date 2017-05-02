@@ -170,7 +170,7 @@ function google_search(sender)
 		        console.log(body) // Print the json response
 		       for (var i = 0; i < body.items.length; i++) {
 		        var item = body.items[i].link;
-		        t=t+item+'/n';
+		        t=t+item+'\n';
 		      }
 		        msg= {"text":t};
 		        sendMessage(sender,msg);
