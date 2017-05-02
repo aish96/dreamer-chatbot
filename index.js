@@ -172,40 +172,41 @@ function google_search(sender)
 		        t=t+item+'\n';
 		      }
 
-		    msg ={
-		     "attachment":{
-		      "type":"template",
-		      "payload":{
-		        "template_type":"generic",
-		        "elements":[
-		           {
-		            "title":"books!",
-		            "image_url":"https://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_527568/Image/Staff%20Images/Language%20Arts/sezozzar/il_fullxfull.273665395.jpg",
-		            "subtitle":"We\'ve got the right book for everyone.",
-		            "default_action": {
-		              "type": "web_url",
-		              "url": "https://www.google.com",
-		              "messenger_extensions": true,
-		              "webview_height_ratio": "tall",
-		              "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-		            },
-		            "buttons":[
-		              {
-		                "type":"web_url",
-		                "url":"https://petersfancybrownhats.com",
-		                "title":"View Website"
-		              },{
-		                "type":"postback",
-		                "title":"Start Chatting",
-		                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-		              }              
-		            ]      
-		          }
-		        ]
-		      }
-   			 }
-   			};
-		        sendMessage(sender,msg);
+		    // msg ={
+		    //  "attachment":{
+		    //   "type":"template",
+		    //   "payload":{
+		    //     "template_type":"generic",
+		    //     "elements":[
+		    //        {
+		    //         "title":"books!",
+		    //         "image_url":"https://p6cdn4static.sharpschool.com/UserFiles/Servers/Server_527568/Image/Staff%20Images/Language%20Arts/sezozzar/il_fullxfull.273665395.jpg",
+		    //         "subtitle":"We\'ve got the right book for everyone.",
+		    //         "default_action": {
+		    //           "type": "web_url",
+		    //           "url": "https://www.google.com",
+		    //           "messenger_extensions": true,
+		    //           "webview_height_ratio": "tall",
+		    //           "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+		    //         },
+		    //         "buttons":[
+		    //           {
+		    //             "type":"web_url",
+		    //             "url":"https://petersfancybrownhats.com",
+		    //             "title":"View Website"
+		    //           },{
+		    //             "type":"postback",
+		    //             "title":"Start Chatting",
+		    //             "payload":"DEVELOPER_DEFINED_PAYLOAD"
+		    //           }              
+		    //         ]      
+		    //       }
+		    //     ]
+		    //   }
+   			//  }
+   			// };
+ 				msg= {"text":t};
+ 		        sendMessage(sender,msg);
 		    }
 		})
 }
