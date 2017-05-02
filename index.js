@@ -1,6 +1,13 @@
 var express = require('express');  
 var bodyParser = require('body-parser');  
 var request = require('request');  
+var GoogleSearch = require('../lib/google-search');
+var googleSearch = new GoogleSearch({
+	  key: 'AIzaSyDr-tiz_6JGU2_Xkr58m5hhluSGttHa2q0',
+	  //AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg
+	  cx: '002402230919056642985:h1o_wygafue'
+	  //002402230919056642985:mhcirunx4c8'
+	});
 var app = express();
 // var apiai = require('apiai');
 // var app = apiai(CLIENT_ACCESS_TOKEN);
@@ -140,15 +147,7 @@ function getQuote(sender)
 
 function google_search(sender)
 {
-	var GoogleSearch = require('google-search');
-	var googleSearch = new GoogleSearch({
-	  key: 'AIzaSyDr-tiz_6JGU2_Xkr58m5hhluSGttHa2q0',
-	  //AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg
-	  cx: '002402230919056642985:h1o_wygafue'
-	  //002402230919056642985:mhcirunx4c8'
-	});
- 
- 
+	
 	googleSearch.build({
 	  q: "",
 	  start: 5,
