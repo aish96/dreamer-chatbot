@@ -66,8 +66,7 @@ app.post('/webhook', function (req, res) {
 					continue;
 				}
 
-				else 
-				            sendMessage(sender, {text: "Echo: " + text});
+				
 
 				  // ignore rest of the event handling
 				  continue;
