@@ -1,7 +1,7 @@
 var express = require('express');  
 var bodyParser = require('body-parser');  
 var request = require('request');  
-var GoogleSearch = require('../lib/google-search');
+var GoogleSearch = require('google-search');
 var googleSearch = new GoogleSearch({
 	  key: 'AIzaSyDr-tiz_6JGU2_Xkr58m5hhluSGttHa2q0',
 	  //AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg
