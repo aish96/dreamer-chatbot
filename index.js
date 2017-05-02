@@ -168,8 +168,8 @@ function google_search(sender)
 			t="";
 		    if (!error && response.statusCode === 200) {
 		        console.log(body) // Print the json response
-		       for (var i = 0; i < response.items.length; i++) {
-		        var item = response.items[i].link;
+		       for (var i = 0; i < body.items.length; i++) {
+		        var item = body.items[i].link;
 		        t=t+item+'/n';
 		      }
 		        msg= {"text":t};
