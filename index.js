@@ -179,7 +179,7 @@ function google_search(sender)
 		        "template_type":"generic",
 		        "elements":[
 		           {
-		            "title":t,
+		            "title":"books!",
 		            "image_url":"http://gregdenning.com/wp-content/uploads/2014/10/Stack-of-books-great-education.jpg",
 		            "subtitle":"We\'ve got the right book for everyone.",
 		            "default_action": {
