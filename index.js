@@ -165,10 +165,14 @@ function google_search(sender)
 		    url: "https://www.googleapis.com/customsearch/v1?key=AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg&cx=002402230919056642985:mhcirunx4c8&q=books",
 		    json: true
 		}, function (error, response, body) {
-
+			t="";
 		    if (!error && response.statusCode === 200) {
 		        console.log(body) // Print the json response
-		        msg= {"text":body.kind};
+		       for (var i = 0; i < response.items.length; i++) {
+		        var item = response.items[i].link;
+		        t=t+item+'/n';
+		      }
+		        msg= {"text":t};
 		        sendMessage(sender,msg);
 		    }
 		})
