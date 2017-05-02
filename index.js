@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');  
 var request = require('request');  
 var app = express();
-
+var apiai = require('apiai');
+var app = apiai(CLIENT_ACCESS_TOKEN);
 app.use(bodyParser.urlencoded({extended: false}));  
 app.use(bodyParser.json());  
 app.listen((process.env.PORT || 3000));
@@ -52,7 +53,11 @@ app.post('/webhook', function (req, res) {
 					sendMessage(sender,{text:msg});
 					getQuote(sender);
 
-				}  else 
+				}  else if (upperCasedText.includes('google')) {
+					google_search(sender);
+				}
+
+				else 
 				            sendMessage(sender, {text: "Echo: " + text});
 
 				  // ignore rest of the event handling
@@ -130,3 +135,30 @@ function getQuote(sender)
 		    }
 		})
 }
+
+function google_search(sender)
+{
+	var GoogleSearch = require('google-search');
+	var googleSearch = new GoogleSearch({
+	  key: 'AIzaSyDr-tiz_6JGU2_Xkr58m5hhluSGttHa2q0',
+	  //AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg
+	  cx: '002402230919056642985:h1o_wygafue'
+	  //002402230919056642985:mhcirunx4c8'
+	});
+ 
+ 
+	googleSearch.build({
+	  q: "",
+	  start: 5,
+	  // fileType: "pdf",
+	  // gl: "tr", //geolocation, 
+	  // lr: "lang_tr",
+	  num: 10 // Number of search results to return between 1 and 10, inclusive 
+	  //siteSearch: "http://.ankara.edu.tr/" // Restricts results to URLs from a specified site 
+	}, function(error, response) {
+	  console.log(response);
+	  msg= {"text":response};
+		        sendMessage(sender,msg);
+	});
+}
+
