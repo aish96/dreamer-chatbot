@@ -54,8 +54,9 @@ app.post('/webhook', function (req, res) {
 					getQuote(sender);
 
 				}  
-				else if (upperCasedText.includes('google')) {
+				else if (upperCasedText.includes('GOOGLE')) {
 					google_search(sender);
+					continue;
 				}
 
 				else 
