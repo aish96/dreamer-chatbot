@@ -1,13 +1,13 @@
 var express = require('express');  
 var bodyParser = require('body-parser');  
 var request = require('request');  
-var GoogleSearch = require('google-search');
-var googleSearch = new GoogleSearch({
-	  key: 'AIzaSyDr-tiz_6JGU2_Xkr58m5hhluSGttHa2q0',
-	  //AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg
-	  cx: '002402230919056642985:h1o_wygafue'
-	  //002402230919056642985:mhcirunx4c8'
-	});
+// var GoogleSearch = require('google-search');
+// var googleSearch = new GoogleSearch({
+// 	  key: 'AIzaSyDr-tiz_6JGU2_Xkr58m5hhluSGttHa2q0',
+// 	  //AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg
+// 	  cx: '002402230919056642985:h1o_wygafue'
+// 	  //002402230919056642985:mhcirunx4c8'
+// 	});
 var app = express();
 // var apiai = require('apiai');
 // var app = apiai(CLIENT_ACCESS_TOKEN);
@@ -148,19 +148,29 @@ function getQuote(sender)
 function google_search(sender)
 {
 	
-	googleSearch.build({
-	  q: "",
-	  start: 5,
-	  // fileType: "pdf",
-	  // gl: "tr", //geolocation, 
-	  // lr: "lang_tr",
-	  num: 10 // Number of search results to return between 1 and 10, inclusive 
-	  //siteSearch: "http://.ankara.edu.tr/" // Restricts results to URLs from a specified site 
-	}, function(error, response) {
-	  console.log(response);
-	  msg= {"text":response};
-		        sendMessage(sender,msg);
-	});
+	// googleSearch.build({
+	//   q: "",
+	//   start: 5,
+	//   // fileType: "pdf",
+	//   // gl: "tr", //geolocation, 
+	//   // lr: "lang_tr",
+	//   num: 10 // Number of search results to return between 1 and 10, inclusive 
+	//   //siteSearch: "http://.ankara.edu.tr/" // Restricts results to URLs from a specified site 
+	// }, function(error, response) {
+	//   console.log(response);
+	//   msg= {"text":response};
+	// 	        sendMessage(sender,msg);
+	// });
+	request({
+		    url: "https://www.googleapis.com/customsearch/v1?key=AIzaSyDfack-gscJo5BOoKXpeyrGSYX8K9A0kXg&cx=002402230919056642985:mhcirunx4c8&q=books",
+		    json: true
+		}, function (error, response, body) {
 
+		    if (!error && response.statusCode === 200) {
+		        console.log(body) // Print the json response
+		        msg= {"text":body};
+		        sendMessage(sender,msg);
+		    }
+		})
 }
 
